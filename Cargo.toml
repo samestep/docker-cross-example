@@ -1,0 +1,6 @@
+[package]
+name = "foo"
+edition = "2021"
+
+[dependencies]
+wasmtime = "29"

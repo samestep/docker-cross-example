@@ -1,0 +1,465 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 409B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/rust:latest
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 84B done
+#3 DONE 0.0s
+
+#4 [stage-0 1/7] FROM docker.io/library/rust:latest@sha256:738ae99a3d75623f41e6882566b4ef37e38a9840244a47efd4a0ca22e9628b88
+#4 resolve docker.io/library/rust:latest@sha256:738ae99a3d75623f41e6882566b4ef37e38a9840244a47efd4a0ca22e9628b88 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 782B done
+#5 DONE 0.0s
+
+#6 [stage-0 2/7] RUN apt-get update && apt-get install -y musl-tools
+#6 CACHED
+
+#7 [stage-0 3/7] WORKDIR /root
+#7 CACHED
+
+#8 [stage-0 4/7] COPY . .
+#8 DONE 0.0s
+
+#9 [stage-0 5/7] RUN rustup target add "$(./target.py amd64)"
+#9 0.339 info: downloading component 'rust-std' for 'x86_64-unknown-linux-musl'
+#9 1.912 info: installing component 'rust-std' for 'x86_64-unknown-linux-musl'
+#9 DONE 4.5s
+
+#10 [stage-0 6/7] RUN cargo build --target "$(./target.py amd64)"
+#10 0.634     Updating crates.io index
+#10 1.697  Downloading crates ...
+#10 1.939   Downloaded equivalent v1.0.1
+#10 1.960   Downloaded fxhash v0.2.1
+#10 1.972   Downloaded cranelift-codegen-shared v0.116.1
+#10 1.974   Downloaded ittapi v0.4.0
+#10 2.013   Downloaded wasm-encoder v0.225.0
+#10 2.031   Downloaded embedded-io v0.6.1
+#10 2.034   Downloaded thiserror v1.0.69
+#10 2.038   Downloaded wasmtime-slab v29.0.1
+#10 2.040   Downloaded digest v0.10.7
+#10 2.042   Downloaded wasmtime-versioned-export-macros v29.0.1
+#10 2.043   Downloaded wasmtime-jit-debug v29.0.1
+#10 2.046   Downloaded shlex v1.3.0
+#10 2.047   Downloaded wasmtime-component-util v29.0.1
+#10 2.047   Downloaded sptr v0.3.2
+#10 2.048   Downloaded stable_deref_trait v1.2.0
+#10 2.050   Downloaded memfd v0.6.4
+#10 2.052   Downloaded itoa v1.0.14
+#10 2.053   Downloaded wasmtime-math v29.0.1
+#10 2.054   Downloaded wasmtime-asm-macros v29.0.1
+#10 2.054   Downloaded cranelift-native v0.116.1
+#10 2.055   Downloaded crypto-common v0.1.6
+#10 2.056   Downloaded cranelift-control v0.116.1
+#10 2.057   Downloaded thiserror-impl v1.0.69
+#10 2.058   Downloaded generic-array v0.14.7
+#10 2.061   Downloaded foldhash v0.1.4
+#10 2.064   Downloaded wasmtime-jit-icache-coherence v29.0.1
+#10 2.064   Downloaded serde_spanned v0.6.8
+#10 2.067   Downloaded leb128 v0.2.5
+#10 2.068   Downloaded rustc-hash v2.1.1
+#10 2.069   Downloaded heck v0.5.0
+#10 2.070   Downloaded toml_datetime v0.6.8
+#10 2.071   Downloaded unicode-xid v0.2.6
+#10 2.072   Downloaded leb128fmt v0.1.0
+#10 2.073   Downloaded addr2line v0.24.2
+#10 2.077   Downloaded wat v1.225.0
+#10 2.078   Downloaded paste v1.0.15
+#10 2.080   Downloaded zstd-safe v7.2.1
+#10 2.081   Downloaded cranelift-bforest v0.116.1
+#10 2.082   Downloaded directories-next v2.0.0
+#10 2.084   Downloaded pkg-config v0.3.31
+#10 2.085   Downloaded fallible-iterator v0.3.0
+#10 2.086   Downloaded errno v0.3.10
+#10 2.087   Downloaded either v1.13.0
+#10 2.088   Downloaded async-trait v0.1.86
+#10 2.090   Downloaded dirs-sys-next v0.1.2
+#10 2.091   Downloaded block-buffer v0.10.4
+#10 2.092   Downloaded crossbeam-deque v0.8.6
+#10 2.093   Downloaded crc32fast v1.4.2
+#10 2.095   Downloaded target-lexicon v0.13.2
+#10 2.096   Downloaded jobserver v0.1.32
+#10 2.098   Downloaded semver v1.0.25
+#10 2.100   Downloaded version_check v0.9.5
+#10 2.101   Downloaded fxprof-processed-profile v0.6.0
+#10 2.103   Downloaded quote v1.0.38
+#10 2.105   Downloaded postcard v1.1.1
+#10 2.106   Downloaded smallvec v1.13.2
+#10 2.108   Downloaded embedded-io v0.4.0
+#10 2.109   Downloaded debugid v0.8.0
+#10 2.110   Downloaded cranelift-bitset v0.116.1
+#10 2.110   Downloaded cpufeatures v0.2.17
+#10 2.112   Downloaded cobs v0.2.3
+#10 2.113   Downloaded cfg-if v1.0.0
+#10 2.113   Downloaded byteorder v1.5.0
+#10 2.115   Downloaded trait-variant v0.1.2
+#10 2.116   Downloaded sha2 v0.10.8
+#10 2.123   Downloaded rustc-demangle v0.1.24
+#10 2.124   Downloaded zstd v0.13.2
+#10 2.127   Downloaded ahash v0.8.11
+#10 2.130   Downloaded wasmtime-wit-bindgen v29.0.1
+#10 2.131   Downloaded wasmtime-fiber v29.0.1
+#10 2.133   Downloaded wasmprinter v0.221.3
+#10 2.134   Downloaded unicode-ident v1.0.16
+#10 2.136   Downloaded arbitrary v1.4.1
+#10 2.139   Downloaded wasmtime-cache v29.0.1
+#10 2.141   Downloaded wasm-encoder v0.221.3
+#10 2.144   Downloaded uuid v1.13.1
+#10 2.147   Downloaded typenum v1.17.0
+#10 2.149   Downloaded ryu v1.0.19
+#10 2.151   Downloaded once_cell v1.20.3
+#10 2.153   Downloaded toml v0.8.20
+#10 2.155   Downloaded log v0.4.25
+#10 2.157   Downloaded crossbeam-utils v0.8.21
+#10 2.160   Downloaded crossbeam-epoch v0.9.18
+#10 2.162   Downloaded allocator-api2 v0.2.21
+#10 2.164   Downloaded termcolor v1.4.1
+#10 2.165   Downloaded cranelift-frontend v0.116.1
+#10 2.167   Downloaded cranelift-entity v0.116.1
+#10 2.168   Downloaded wasmtime-winch v29.0.1
+#10 2.169   Downloaded proc-macro2 v1.0.93
+#10 2.172   Downloaded rayon-core v1.12.1
+#10 2.175   Downloaded pulley-interpreter v29.0.1
+#10 2.178   Downloaded id-arena v2.2.1
+#10 2.178   Downloaded bitflags v2.8.0
+#10 2.181   Downloaded anyhow v1.0.95
+#10 2.186   Downloaded serde_derive v1.0.217
+#10 2.193   Downloaded cpp_demangle v0.4.4
+#10 2.196   Downloaded indexmap v2.7.1
+#10 2.199   Downloaded winch-codegen v29.0.1
+#10 2.207   Downloaded base64 v0.21.7
+#10 2.210   Downloaded serde v1.0.217
+#10 2.213   Downloaded cc v1.2.13
+#10 2.216   Downloaded bumpalo v3.17.0
+#10 2.219   Downloaded cranelift-isle v0.116.1
+#10 2.223   Downloaded wit-parser v0.221.3
+#10 2.241   Downloaded wast v225.0.0
+#10 2.248   Downloaded zerocopy v0.7.35
+#10 2.258   Downloaded wasmtime-environ v29.0.1
+#10 2.264   Downloaded winnow v0.7.1
+#10 2.271   Downloaded wasmparser v0.225.0
+#10 2.278   Downloaded ittapi-sys v0.4.0
+#10 2.283   Downloaded itertools v0.12.1
+#10 2.288   Downloaded unicode-width v0.2.0
+#10 2.295   Downloaded rayon v1.10.0
+#10 2.302   Downloaded hashbrown v0.15.2
+#10 2.306   Downloaded hashbrown v0.14.5
+#10 2.311   Downloaded wasmparser v0.221.3
+#10 2.318   Downloaded serde_json v1.0.138
+#10 2.324   Downloaded regalloc2 v0.11.1
+#10 2.328   Downloaded wasmtime-cranelift v29.0.1
+#10 2.333   Downloaded wasmtime-component-macro v29.0.1
+#10 2.342   Downloaded gimli v0.31.1
+#10 2.349   Downloaded syn v2.0.98
+#10 2.358   Downloaded libm v0.2.11
+#10 2.364   Downloaded object v0.36.7
+#10 2.373   Downloaded rustix v0.38.44
+#10 2.391   Downloaded toml_edit v0.22.23
+#10 2.405   Downloaded memchr v2.7.4
+#10 2.409   Downloaded cranelift-codegen-meta v0.116.1
+#10 2.413   Downloaded wasmtime v29.0.1
+#10 2.432   Downloaded zstd-sys v2.0.13+zstd.1.5.6
+#10 2.450   Downloaded libc v0.2.169
+#10 2.472   Downloaded cranelift-codegen v0.116.1
+#10 2.498   Downloaded encoding_rs v0.8.35
+#10 2.525   Downloaded linux-raw-sys v0.4.15
+#10 2.700    Compiling proc-macro2 v1.0.93
+#10 2.701    Compiling unicode-ident v1.0.16
+#10 2.701    Compiling serde v1.0.217
+#10 2.701    Compiling libc v0.2.169
+#10 2.702    Compiling cfg-if v1.0.0
+#10 2.702    Compiling shlex v1.3.0
+#10 2.703    Compiling version_check v0.9.5
+#10 2.703    Compiling foldhash v0.1.4
+#10 3.181    Compiling anyhow v1.0.95
+#10 3.870    Compiling equivalent v1.0.1
+#10 4.653    Compiling hashbrown v0.15.2
+#10 4.693    Compiling bitflags v2.8.0
+#10 4.700    Compiling serde_json v1.0.138
+#10 4.957    Compiling memchr v2.7.4
+#10 5.016    Compiling log v0.4.25
+#10 6.100    Compiling cranelift-isle v0.116.1
+#10 6.196    Compiling allocator-api2 v0.2.21
+#10 6.653    Compiling typenum v1.17.0
+#10 7.132    Compiling jobserver v0.1.32
+#10 7.518    Compiling ahash v0.8.11
+#10 8.122    Compiling quote v1.0.38
+#10 8.169    Compiling bumpalo v3.17.0
+#10 8.426    Compiling generic-array v0.14.7
+#10 8.842    Compiling cc v1.2.13
+#10 9.320    Compiling pkg-config v0.3.31
+#10 9.612    Compiling syn v2.0.98
+#10 9.734    Compiling cranelift-codegen-shared v0.116.1
+#10 9.759    Compiling target-lexicon v0.13.2
+#10 11.03    Compiling cranelift-codegen-meta v0.116.1
+#10 11.37    Compiling zerocopy v0.7.35
+#10 12.24    Compiling rustix v0.38.44
+#10 12.61    Compiling crossbeam-utils v0.8.21
+#10 12.75    Compiling semver v1.0.25
+#10 13.49    Compiling once_cell v1.20.3
+#10 14.74    Compiling zstd-sys v2.0.13+zstd.1.5.6
+#10 17.22    Compiling wasmparser v0.221.3
+#10 17.28    Compiling arbitrary v1.4.1
+#10 17.84    Compiling linux-raw-sys v0.4.15
+#10 18.31    Compiling cranelift-codegen v0.116.1
+#10 19.05    Compiling rustc-hash v2.1.1
+#10 19.57    Compiling object v0.36.7
+#10 19.90    Compiling cranelift-control v0.116.1
+#10 20.43    Compiling serde_derive v1.0.217
+#10 20.64    Compiling wasmtime-versioned-export-macros v29.0.1
+#10 21.53    Compiling hashbrown v0.14.5
+#10 23.76    Compiling crc32fast v1.4.2
+#10 24.44    Compiling cobs v0.2.3
+#10 25.68    Compiling wasm-encoder v0.225.0
+#10 26.29    Compiling zstd-safe v7.2.1
+#10 27.60    Compiling cpp_demangle v0.4.4
+#10 27.61    Compiling ryu v1.0.19
+#10 27.89    Compiling itoa v1.0.14
+#10 28.66    Compiling indexmap v2.7.1
+#10 29.13    Compiling crossbeam-epoch v0.9.18
+#10 29.90    Compiling block-buffer v0.10.4
+#10 31.20    Compiling crypto-common v0.1.6
+#10 31.30    Compiling ittapi-sys v0.4.0
+#10 31.45    Compiling leb128fmt v0.1.0
+#10 31.69    Compiling rayon-core v1.12.1
+#10 32.74    Compiling id-arena v2.2.1
+#10 32.86    Compiling thiserror v1.0.69
+#10 32.89    Compiling unicode-xid v0.2.6
+#10 32.99    Compiling leb128 v0.2.5
+#10 34.03    Compiling cranelift-bitset v0.116.1
+#10 34.13    Compiling smallvec v1.13.2
+#10 34.40    Compiling toml_datetime v0.6.8
+#10 34.67    Compiling postcard v1.1.1
+#10 35.98    Compiling cranelift-entity v0.116.1
+#10 36.05    Compiling regalloc2 v0.11.1
+#10 36.38    Compiling gimli v0.31.1
+#10 36.89    Compiling serde_spanned v0.6.8
+#10 38.16    Compiling cranelift-bforest v0.116.1
+#10 38.40    Compiling libm v0.2.11
+#10 39.85    Compiling either v1.13.0
+#10 40.18    Compiling termcolor v1.4.1
+#10 41.13    Compiling winnow v0.7.1
+#10 41.30    Compiling wit-parser v0.221.3
+#10 44.82    Compiling wasm-encoder v0.221.3
+#10 45.93    Compiling toml_edit v0.22.23
+#10 46.85    Compiling wasmprinter v0.221.3
+#10 47.25 error: failed to run custom build command for `zstd-sys v2.0.13+zstd.1.5.6`
+#10 47.25 
+#10 47.25 Caused by:
+#10 47.25   process didn't exit successfully: `/root/target/debug/build/zstd-sys-b469f1d9dcd1c115/build-script-build` (exit status: 1)
+#10 47.25   --- stdout
+#10 47.25   cargo:rerun-if-env-changed=ZSTD_SYS_USE_PKG_CONFIG
+#10 47.25   OUT_DIR = Some(/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out)
+#10 47.25   OPT_LEVEL = Some(0)
+#10 47.25   TARGET = Some(x86_64-unknown-linux-musl)
+#10 47.25   HOST = Some(x86_64-unknown-linux-gnu)
+#10 47.25   cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-musl
+#10 47.25   CC_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=CC_x86_64_unknown_linux_musl
+#10 47.25   CC_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_CC
+#10 47.25   TARGET_CC = None
+#10 47.25   cargo:rerun-if-env-changed=CC
+#10 47.25   CC = None
+#10 47.25   cargo:rerun-if-env-changed=CROSS_COMPILE
+#10 47.25   CROSS_COMPILE = None
+#10 47.25   RUSTC_LINKER = None
+#10 47.25   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+#10 47.25   RUSTC_WRAPPER = None
+#10 47.25   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+#10 47.25   CRATE_CC_NO_DEFAULTS = None
+#10 47.25   DEBUG = Some(true)
+#10 47.25   CARGO_CFG_TARGET_FEATURE = Some(fxsr,sse,sse2)
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl
+#10 47.25   CFLAGS_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_musl
+#10 47.25   CFLAGS_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_CFLAGS
+#10 47.25   TARGET_CFLAGS = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS
+#10 47.25   CFLAGS = None
+#10 47.25   CARGO_ENCODED_RUSTFLAGS = Some()
+#10 47.25   OUT_DIR = Some(/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out)
+#10 47.25   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+#10 47.25   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+#10 47.25   CRATE_CC_NO_DEFAULTS = None
+#10 47.25   TARGET = Some(x86_64-unknown-linux-musl)
+#10 47.25   CARGO_CFG_TARGET_FEATURE = Some(fxsr,sse,sse2)
+#10 47.25   HOST = Some(x86_64-unknown-linux-gnu)
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl
+#10 47.25   CFLAGS_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_musl
+#10 47.25   CFLAGS_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_CFLAGS
+#10 47.25   TARGET_CFLAGS = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS
+#10 47.25   CFLAGS = None
+#10 47.25   OUT_DIR = Some(/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out)
+#10 47.25   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+#10 47.25   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+#10 47.25   CRATE_CC_NO_DEFAULTS = None
+#10 47.25   TARGET = Some(x86_64-unknown-linux-musl)
+#10 47.25   CARGO_CFG_TARGET_FEATURE = Some(fxsr,sse,sse2)
+#10 47.25   HOST = Some(x86_64-unknown-linux-gnu)
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl
+#10 47.25   CFLAGS_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_musl
+#10 47.25   CFLAGS_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_CFLAGS
+#10 47.25   TARGET_CFLAGS = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS
+#10 47.25   CFLAGS = None
+#10 47.25   OUT_DIR = Some(/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out)
+#10 47.25   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+#10 47.25   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+#10 47.25   CRATE_CC_NO_DEFAULTS = None
+#10 47.25   TARGET = Some(x86_64-unknown-linux-musl)
+#10 47.25   CARGO_CFG_TARGET_FEATURE = Some(fxsr,sse,sse2)
+#10 47.25   HOST = Some(x86_64-unknown-linux-gnu)
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl
+#10 47.25   CFLAGS_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_musl
+#10 47.25   CFLAGS_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_CFLAGS
+#10 47.25   TARGET_CFLAGS = None
+#10 47.25   cargo:rerun-if-env-changed=CFLAGS
+#10 47.25   CFLAGS = None
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   exit status: 0
+#10 47.25   cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-musl
+#10 47.25   AR_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=AR_x86_64_unknown_linux_musl
+#10 47.25   AR_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_AR
+#10 47.25   TARGET_AR = None
+#10 47.25   cargo:rerun-if-env-changed=AR
+#10 47.25   AR = None
+#10 47.25   cargo:rerun-if-env-changed=ARFLAGS_x86_64-unknown-linux-musl
+#10 47.25   ARFLAGS_x86_64-unknown-linux-musl = None
+#10 47.25   cargo:rerun-if-env-changed=ARFLAGS_x86_64_unknown_linux_musl
+#10 47.25   ARFLAGS_x86_64_unknown_linux_musl = None
+#10 47.25   cargo:rerun-if-env-changed=TARGET_ARFLAGS
+#10 47.25   TARGET_ARFLAGS = None
+#10 47.25   cargo:rerun-if-env-changed=ARFLAGS
+#10 47.25   ARFLAGS = None
+#10 47.25 
+#10 47.25   --- stderr
+#10 47.25 
+#10 47.25 
+#10 47.25   error occurred in cc-rs: Command ZERO_AR_DATE="1" "musl-ar" "cq" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/libzstd.a" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-debug.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-entropy_common.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-error_private.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-fse_decompress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-pool.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-threading.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/44ff4c55aa9e5133-zstd_common.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-fse_compress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-hist.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-huf_compress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_compress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_compress_literals.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_compress_sequences.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_compress_superblock.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_double_fast.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_fast.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_lazy.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_ldm.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstd_opt.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/fb80479a5fb81f6a-zstdmt_compress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/88f362f13b0528ed-huf_decompress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/88f362f13b0528ed-zstd_ddict.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/88f362f13b0528ed-zstd_decompress.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/88f362f13b0528ed-zstd_decompress_block.o" "/root/target/x86_64-unknown-linux-musl/debug/build/zstd-sys-7442e8fce933a8d2/out/7faed3f8272f2313-huf_decompress_amd64.o" with args musl-ar did not execute successfully (status code exit status: 127).
+#10 47.25 
+#10 47.25 
+#10 47.25 warning: build failed, waiting for other jobs to finish...
+#10 47.97 error: failed to run custom build command for `ittapi-sys v0.4.0`
+#10 47.97 
+#10 47.97 Caused by:
+#10 47.97   process didn't exit successfully: `/root/target/debug/build/ittapi-sys-3350cccabd5c3d93/build-script-build` (exit status: 1)
+#10 47.97   --- stdout
+#10 47.97   OUT_DIR = Some(/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out)
+#10 47.97   OPT_LEVEL = Some(0)
+#10 47.97   TARGET = Some(x86_64-unknown-linux-musl)
+#10 47.97   HOST = Some(x86_64-unknown-linux-gnu)
+#10 47.97   cargo:rerun-if-env-changed=CC_x86_64-unknown-linux-musl
+#10 47.97   CC_x86_64-unknown-linux-musl = None
+#10 47.97   cargo:rerun-if-env-changed=CC_x86_64_unknown_linux_musl
+#10 47.97   CC_x86_64_unknown_linux_musl = None
+#10 47.97   cargo:rerun-if-env-changed=TARGET_CC
+#10 47.97   TARGET_CC = None
+#10 47.97   cargo:rerun-if-env-changed=CC
+#10 47.97   CC = None
+#10 47.97   cargo:rerun-if-env-changed=CROSS_COMPILE
+#10 47.97   CROSS_COMPILE = None
+#10 47.97   RUSTC_LINKER = None
+#10 47.97   cargo:rerun-if-env-changed=CC_ENABLE_DEBUG_OUTPUT
+#10 47.97   RUSTC_WRAPPER = None
+#10 47.97   cargo:rerun-if-env-changed=CRATE_CC_NO_DEFAULTS
+#10 47.97   CRATE_CC_NO_DEFAULTS = None
+#10 47.97   DEBUG = Some(true)
+#10 47.97   CARGO_CFG_TARGET_FEATURE = Some(fxsr,sse,sse2)
+#10 47.97   cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl
+#10 47.97   CFLAGS_x86_64-unknown-linux-musl = None
+#10 47.97   cargo:rerun-if-env-changed=CFLAGS_x86_64_unknown_linux_musl
+#10 47.97   CFLAGS_x86_64_unknown_linux_musl = None
+#10 47.97   cargo:rerun-if-env-changed=TARGET_CFLAGS
+#10 47.97   TARGET_CFLAGS = None
+#10 47.97   cargo:rerun-if-env-changed=CFLAGS
+#10 47.97   CFLAGS = None
+#10 47.97   CARGO_ENCODED_RUSTFLAGS = Some()
+#10 47.97   exit status: 0
+#10 47.97   exit status: 0
+#10 47.97   cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-musl
+#10 47.97   AR_x86_64-unknown-linux-musl = None
+#10 47.97   cargo:rerun-if-env-changed=AR_x86_64_unknown_linux_musl
+#10 47.97   AR_x86_64_unknown_linux_musl = None
+#10 47.97   cargo:rerun-if-env-changed=TARGET_AR
+#10 47.97   TARGET_AR = None
+#10 47.97   cargo:rerun-if-env-changed=AR
+#10 47.97   AR = None
+#10 47.97   cargo:rerun-if-env-changed=ARFLAGS_x86_64-unknown-linux-musl
+#10 47.97   ARFLAGS_x86_64-unknown-linux-musl = None
+#10 47.97   cargo:rerun-if-env-changed=ARFLAGS_x86_64_unknown_linux_musl
+#10 47.97   ARFLAGS_x86_64_unknown_linux_musl = None
+#10 47.97   cargo:rerun-if-env-changed=TARGET_ARFLAGS
+#10 47.97   TARGET_ARFLAGS = None
+#10 47.97   cargo:rerun-if-env-changed=ARFLAGS
+#10 47.97   ARFLAGS = None
+#10 47.97 
+#10 47.97   --- stderr
+#10 47.97 
+#10 47.97 
+#10 47.97   error occurred in cc-rs: Command ZERO_AR_DATE="1" "musl-ar" "cq" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/libittnotify.a" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/48f6f8d8d7ef524e-ittnotify_static.o" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/48f6f8d8d7ef524e-jitprofiling.o" with args musl-ar did not execute successfully (status code exit status: 127).
+#10 47.97 
+#10 47.97 
+#10 ERROR: process "/bin/sh -c cargo build --target \"$(./target.py $TARGETARCH)\"" did not complete successfully: exit code: 101
+------
+ > [stage-0 6/7] RUN cargo build --target "$(./target.py amd64)":
+47.97   TARGET_ARFLAGS = None
+47.97   cargo:rerun-if-env-changed=ARFLAGS
+47.97   ARFLAGS = None
+47.97 
+47.97   --- stderr
+47.97 
+47.97 
+47.97   error occurred in cc-rs: Command ZERO_AR_DATE="1" "musl-ar" "cq" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/libittnotify.a" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/48f6f8d8d7ef524e-ittnotify_static.o" "/root/target/x86_64-unknown-linux-musl/debug/build/ittapi-sys-da6c957d0c493f56/out/48f6f8d8d7ef524e-jitprofiling.o" with args musl-ar did not execute successfully (status code exit status: 127).
+47.97 
+47.97 
+------
+Dockerfile:7
+--------------------
+   5 |     COPY . .
+   6 |     RUN rustup target add "$(./target.py $TARGETARCH)"
+   7 | >>> RUN cargo build --target "$(./target.py $TARGETARCH)"
+   8 |     RUN cp "target/$(./target.py $TARGETARCH)/debug/foo" .
+   9 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c cargo build --target \"$(./target.py $TARGETARCH)\"" did not complete successfully: exit code: 101
