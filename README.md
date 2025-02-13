@@ -2,7 +2,7 @@
 
 This repository holds a full code example to reproduce this issue I opened in the [rust-lang/cc-rs](https://github.com/rust-lang/cc-rs) repo:
 
-> **Archiver for musl is not `ar` when in Docker image for a different architecture**
+> [**Archiver for musl is not `ar` when in Docker image for a different architecture**](https://github.com/rust-lang/cc-rs/issues/1399)
 
 You'll need [Rust](https://www.rust-lang.org/tools/install) and [Docker](https://docs.docker.com/engine/install/). To build [multi-platform Docker images](https://docs.docker.com/build/building/multi-platform/), you must enable [containerd](https://docs.docker.com/storage/containerd/) in Docker. If you're running Docker Engine on Linux, without Docker Desktop, you also need to install [QEMU](https://docs.docker.com/build/building/multi-platform/#qemu-without-docker-desktop).
 
