@@ -2,5 +2,5 @@
 name = "foo"
 edition = "2021"
 
-[dependencies]
-wasmtime = "29"
+[build-dependencies]
+cc = "1"

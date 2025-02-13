@@ -1,36 +1,48 @@
-# Example code for Docker question on Stack Overflow
+# Example code for cc-rs issue about musl archiver
 
-This repository holds a full code example to reproduce the issue in my Stack Overflow question:
+This repository holds a full code example to reproduce this issue I opened in the [rust-lang/cc-rs](https://github.com/rust-lang/cc-rs) repo:
 
-> [**Can I build a multi-platform Docker image containing Rust code with native dependencies targeting musl?**](https://stackoverflow.com/q/79425799/5044950)
+> **Archiver for musl is not `ar` when in Docker image for a different architecture**
 
 You'll need [Rust](https://www.rust-lang.org/tools/install) and [Docker](https://docs.docker.com/engine/install/). To build [multi-platform Docker images](https://docs.docker.com/build/building/multi-platform/), you must enable [containerd](https://docs.docker.com/storage/containerd/) in Docker. If you're running Docker Engine on Linux, without Docker Desktop, you also need to install [QEMU](https://docs.docker.com/build/building/multi-platform/#qemu-without-docker-desktop).
 
 ---
 
-First, to run the program outside Docker entirely, use this command:
+To run natively:
 
 ```sh
-cargo run
+rm -rf target && cargo build -vv --target "$(./target.py amd64)" 2> /dev/null
 ```
 
-To build and run natively but inside Docker, use this command:
+To run natively targeting x86 musl:
 
 ```sh
-docker build . -t foo && docker run --rm foo
+rm -rf target && cargo build -vv --target "$(./target.py arm64)" 2> /dev/null
 ```
 
-To build a multi-platform Docker image, comment out the `wasmtime` dependency in [`Cargo.toml`](Cargo.toml) and then use this command:
+To run in Docker targeting x86 musl:
 
 ```sh
-docker build --platform linux/amd64,linux/arm64 .
+docker build --platform linux/amd64 . -t foo-x86 && docker run --rm foo-x86
 ```
 
-To reproduce the error, simply use that last command without commenting out the dependency. For instance, [`log.txt`](log.txt) shows the error log I get when attempting to build this image for `linux/amd64` on my M1 MacBook.
-
-As another data point, you can also use [`cross`](https://github.com/cross-rs/cross) to successfully build cross-platform musl binaries:
+To run in Docker targeting ARM musl:
 
 ```sh
-cross build --target x86_64-unknown-linux-musl
-cross build --target aarch64-unknown-linux-musl
+docker build --platform linux/arm64 . -t foo-arm && docker run --rm foo-arm
 ```
+
+In whichever case, look at the archiver printed at the bottom of the output. Here's what I see on the machines I've used to test this:
+
+- ARM macOS
+  - native: `"ar"`
+  - native targeting x86 musl: `"ar"`
+  - native targeting ARM musl: `"ar"`
+  - Docker targeting x86 musl: `"musl-ar"`
+  - Docker targeting ARM musl: `"ar"`
+- x86 Linux
+  - native: `"ar"`
+  - native targeting x86 musl: `"ar"`
+  - native targeting ARM musl: `"ar"`
+  - Docker targeting x86 musl: `"ar"`
+  - Docker targeting ARM musl: `"aarch64-linux-musl-ar"`
