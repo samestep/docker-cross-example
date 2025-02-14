@@ -61,22 +61,48 @@ You can also look at other info from the output, e.g. `TARGET` and `HOST`:
     TARGET = Some(aarch64-apple-darwin)
     HOST = Some(aarch64-apple-darwin)
     ```
-  - native targeting x86 musl: `"ar"`
+  - native targeting x86 musl:
     ```
     TARGET = Some(x86_64-unknown-linux-musl)
     HOST = Some(aarch64-apple-darwin)
     ```
-  - native targeting ARM musl: `"ar"`
+  - native targeting ARM musl:
     ```
     TARGET = Some(aarch64-unknown-linux-musl)
     HOST = Some(aarch64-apple-darwin)
     ```
-  - Docker targeting x86 musl: `"musl-ar"`
+  - Docker targeting x86 musl:
     ```
     TARGET = Some(x86_64-unknown-linux-musl)
     HOST = Some(x86_64-unknown-linux-gnu)
     ```
-  - Docker targeting ARM musl: `"ar"`
+  - Docker targeting ARM musl:
+    ```
+    TARGET = Some(aarch64-unknown-linux-musl)
+    HOST = Some(aarch64-unknown-linux-gnu)
+    ```
+- x86 Linux
+  - native:
+    ```
+    TARGET = Some(x86_64-unknown-linux-gnu)
+    HOST = Some(x86_64-unknown-linux-gnu)
+    ```
+  - native targeting x86 musl:
+    ```
+    TARGET = Some(x86_64-unknown-linux-musl)
+    HOST = Some(x86_64-unknown-linux-gnu)
+    ```
+  - native targeting ARM musl:
+    ```
+    TARGET = Some(aarch64-unknown-linux-musl)
+    HOST = Some(x86_64-unknown-linux-gnu)
+    ```
+  - Docker targeting x86 musl:
+    ```
+    TARGET = Some(x86_64-unknown-linux-musl)
+    HOST = Some(x86_64-unknown-linux-gnu)
+    ```
+  - Docker targeting ARM musl:
     ```
     TARGET = Some(aarch64-unknown-linux-musl)
     HOST = Some(aarch64-unknown-linux-gnu)
