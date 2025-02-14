@@ -11,10 +11,16 @@ You'll need [Rust](https://www.rust-lang.org/tools/install) and [Docker](https:/
 To run natively:
 
 ```sh
-rm -rf target && cargo build -vv --target "$(./target.py amd64)" 2> /dev/null
+rm -rf target && cargo build -vv 2> /dev/null
 ```
 
 To run natively targeting x86 musl:
+
+```sh
+rm -rf target && cargo build -vv --target "$(./target.py amd64)" 2> /dev/null
+```
+
+To run natively targeting ARM musl:
 
 ```sh
 rm -rf target && cargo build -vv --target "$(./target.py arm64)" 2> /dev/null
@@ -46,3 +52,32 @@ In whichever case, look at the archiver printed at the bottom of the output. Her
   - native targeting ARM musl: `"ar"`
   - Docker targeting x86 musl: `"ar"`
   - Docker targeting ARM musl: `"aarch64-linux-musl-ar"`
+
+You can also look at other info from the output, e.g. `TARGET` and `HOST`:
+
+- ARM macOS
+  - native:
+    ```
+    TARGET = Some(aarch64-apple-darwin)
+    HOST = Some(aarch64-apple-darwin)
+    ```
+  - native targeting x86 musl: `"ar"`
+    ```
+    TARGET = Some(x86_64-unknown-linux-musl)
+    HOST = Some(aarch64-apple-darwin)
+    ```
+  - native targeting ARM musl: `"ar"`
+    ```
+    TARGET = Some(aarch64-unknown-linux-musl)
+    HOST = Some(aarch64-apple-darwin)
+    ```
+  - Docker targeting x86 musl: `"musl-ar"`
+    ```
+    TARGET = Some(x86_64-unknown-linux-musl)
+    HOST = Some(x86_64-unknown-linux-gnu)
+    ```
+  - Docker targeting ARM musl: `"ar"`
+    ```
+    TARGET = Some(aarch64-unknown-linux-musl)
+    HOST = Some(aarch64-unknown-linux-gnu)
+    ```
